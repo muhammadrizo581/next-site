@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+}
 
-const ProductView = ({ data }) => {
+
+const ProductView = ({ data }: {data:Product[]}) => {
   return (
     <div className="container mx-auto">
         <div className="grid grid-cols-4 gap-6 mt-10">

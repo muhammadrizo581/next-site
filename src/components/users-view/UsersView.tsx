@@ -1,7 +1,19 @@
 "use client";
 import React from "react";
 
-const UsersView = ({ data }) => {
+
+interface User {
+  id: number;
+  email: string;
+  username: string;
+  phone: string;
+  name: {
+    firstname: string;
+    lastname: string;
+  };
+}
+
+const UsersView = ({ data }: {data: User[]}) => {
   return (
       <div className="container mx-auto">
         <div className="grid grid-cols-5 gap-6 mt-6">

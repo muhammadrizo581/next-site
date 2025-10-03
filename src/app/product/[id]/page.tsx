@@ -13,18 +13,22 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const product: Product = await res.json();
 
   return {
-      title: product.title, 
-      description: product.description,
-    };
+    title: product.title,
+    description: product.description,
+  };
 }
 
-const ProductDetail = async ({ params }: { params: { id: string } }) => {
+const ProductDetail = async ({
+  params,
+}: {
+  params: { id: string };
+}) => {
   const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
   const product: Product = await res.json();
 
   return (
     <div className="container mx-auto p-10">
-      <div className="mt-[100px] grid grid-cols-2 gap-10"> 
+      <div className="mt-[100px] grid grid-cols-2 gap-10">
         <div className="flex justify-center items-center">
           <img
             src={product.image}

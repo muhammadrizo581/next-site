@@ -8,7 +8,13 @@ interface Product {
   image: string;
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+type ProductPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export async function generateMetadata({ params }: { params:ProductPageProps  }) {
   const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
   const product: Product = await res.json();
 

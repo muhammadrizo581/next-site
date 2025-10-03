@@ -15,9 +15,9 @@ const ProductView = ({ data }: { data: Product[] }) => {
       <div className="grid grid-cols-4 gap-6 mt-10">
         {data.map((item) => (
           <Link key={item.id} href={`/product/${item.id}`}>
-            <div className="border max-h-[300px] h-full rounded-[20px] p-4 text-center cursor-pointer hover:shadow-lg transition">
+            <div className="border max-h-[300px] h-full rounded-[20px] p-4 text-center flex flex-col justify-between">
               <img src={item.image} className="max-h-40 mx-auto" />
-              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+               <h3 className={`font-semibold mb-2 ${ item.title.length > 20 ? "text-[12px]" : "text-24px" }`} > {item.title} </h3>
               <p className="text-gray-600">${item.price}</p>
             </div>
           </Link>

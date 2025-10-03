@@ -15,7 +15,7 @@ type ProductPageProps = {
 };
 
 export async function generateMetadata({ params }: { params:ProductPageProps  }) {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+  const res = await fetch(`https://fakestoreapi.com/products/${params.id as any}`);
   const product: Product = await res.json();
 
   return {
@@ -29,7 +29,7 @@ const ProductDetail = async ({
 }: {
   params: { id: string };
 }) => {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+  const res = await fetch(`https://fakestoreapi.com/products/${params.id as any}`);
   const product: Product = await res.json();
 
   return (

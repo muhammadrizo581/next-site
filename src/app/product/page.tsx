@@ -7,7 +7,6 @@ const Products = async () => {
 
   return (
     <div>
-      <h2>Products Page</h2>
       <ProductView data={data} />
     </div>
   );

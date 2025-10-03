@@ -33,7 +33,7 @@ const ProductDetail = async ({ params }: any) => {
           />
         </div>
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+          <h1 className="text-[24px] font-bold mb-4">{product.title}</h1>
           <p className="text-gray-700 mb-4">{product.description}</p>
           <p className="text-2xl font-semibold">${product.price}</p>
         </div>

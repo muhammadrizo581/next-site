@@ -10,7 +10,7 @@ interface Product {
 
 type ProductPageProps = {
   params: {
-    id: string;
+    id: any;
   };
 };
 

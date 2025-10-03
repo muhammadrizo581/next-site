@@ -8,14 +8,8 @@ interface Product {
   image: string;
 }
 
-type ProductPageProps = {
-  params: {
-    id: any;
-  };
-};
-
-export async function generateMetadata({ params }: { params:ProductPageProps  }) {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id as any}`);
+export async function generateMetadata({ params }: any) {
+  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
   const product: Product = await res.json();
 
   return {
@@ -24,12 +18,8 @@ export async function generateMetadata({ params }: { params:ProductPageProps  })
   };
 }
 
-const ProductDetail = async ({
-  params,
-}: {
-  params: { id: string };
-}) => {
-  const res = await fetch(`https://fakestoreapi.com/products/${params.id as any}`);
+const ProductDetail = async ({ params }: any) => {
+  const res = await fetch(`https://fakestoreapi.com/products/${params.id}`);
   const product: Product = await res.json();
 
   return (
@@ -42,7 +32,6 @@ const ProductDetail = async ({
             className="max-h-96 object-contain"
           />
         </div>
-
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
           <p className="text-gray-700 mb-4">{product.description}</p>
